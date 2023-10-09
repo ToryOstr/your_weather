@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+p {
+  line-height: 1.2;
+
+}
