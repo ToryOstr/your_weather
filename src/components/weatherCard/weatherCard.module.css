@@ -1,0 +1,14 @@
+.container {
+  max-width: 500px;
+  height: auto;
+  padding: 20px;
+  margin: 20px auto;
+  border: 2px solid rgb(204, 204, 204);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+}
+.cityName{
+  font-size: 36px;
+  font-weight: 400;
+  color: rgb(16, 16, 174);
+}
