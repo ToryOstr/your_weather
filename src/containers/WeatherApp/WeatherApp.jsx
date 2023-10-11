@@ -11,14 +11,15 @@ export default function WeatherApp() {
 
   function handleGetDataSrarch(searchData) {
     const [lat, lon] = searchData.value.split(" ");
-
     const weatherFetch = fetch(
       `${WEATHER_API_URL}onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${API_KEY}`
     )
       .then((response) => response.json())
       .then((data) => {
-        setDataWeather(data);
-        console.log(data);
+        setDataWeather({ city: searchData.label, ...data });
+      })
+      .catch((error) => {
+        console.log(error);
       });
   }
 
@@ -26,7 +27,7 @@ export default function WeatherApp() {
     <div className={styles.container}>
       <Header onhandleGetSearchData={handleGetDataSrarch} />
       <Main>
-        <WeatherCard />
+        {dataWeather && <WeatherCard data={dataWeather} />}
       </Main>
       <Footer />
     </div>
