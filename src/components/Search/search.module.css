@@ -2,10 +2,16 @@
   min-width: 300px;
   padding: 0;
 }
+.customSelect {
+  position: relative;
+  z-index: 2;
+  border-radius: 5px;
+
+}
+
 @media (max-width: 500px) {
-  .searchContainer{
+  .searchContainer {
     min-width: 200px;
     font-size: 1rem;
   }
-  
 }

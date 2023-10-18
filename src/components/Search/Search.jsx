@@ -33,6 +33,7 @@ export default function Search({ onSearchChange }) {
   return (
     <div className={styles.searchContainer}>
       <AsyncPaginate
+        className={styles.customSelect}
         placeholder="Search for city"
         debounceTimeout={1000}
         value={search}
