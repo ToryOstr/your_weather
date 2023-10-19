@@ -14,31 +14,42 @@
   top: 0;
   right: 0;
   display: flex;
-  min-width: 100%;
+  width: auto;
   height: 100%;
   overflow: hidden;
-  opacity: 0.7;
 }
 .weatherImg {
   display: flex;
-  width: 100%;
+  width: auto;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
 }
-.textContainer {
+.dataContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 15px;
   padding: 5px;
 }
 p {
   position: relative;
   z-index: 1;
 }
+
 .date {
   font-size: 16px;
   font-weight: 700;
   color: rgb(16, 16, 160);
+  margin: 5px 5px 0;
 }
 .temp {
-  font-size: 20px;
+  font-size: 16px;
+}
+.other {
+  padding: 3px 5px;
+  background-color: rgba(0, 34, 255, 0.15);
+  border-left: 5px solid rgb(16, 16, 160);
+}
+.other>p{
+  font-size: 16px;
 }

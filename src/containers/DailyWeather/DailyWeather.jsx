@@ -1,19 +1,24 @@
 import DaillyWeatherCard from "../../components/DailyWeatherCard/DailyWeatherCard";
-import styles from "./dailyWeather.module.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import styles from "./dailyWeather.module.css";
 import "swiper/css";
+import "swiper/css/navigation";
 
 export default function DailyWeather(dataWeather) {
+  
   return (
     <div className={styles.container}>
       <Swiper
+        modules={[Navigation]}
         spaceBetween={20}
-        slidesPerView={3.5}
+        navigation
+        slidesPerView={3}
       >
         {dataWeather &&
-          dataWeather.data.daily.map((day) => {
+          dataWeather.data.daily.map((day, index) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <DaillyWeatherCard data={day} />
               </SwiperSlide>
             );
