@@ -26,14 +26,14 @@ export default function WeatherApp() {
 
   return (
     <div className={styles.container}>
-      <Header onhandleGetSearchData={handleGetDataSrarch} />
-      <Main>
-        {dataWeather && <WeatherCard data={dataWeather} />}
-        {dataWeather && (
-          <DailyWeather data={dataWeather} />
-        )}
-      </Main>
-      <Footer />
+      <div className={styles.wrap}>
+        <Header onhandleGetSearchData={handleGetDataSrarch} />
+        <Main>
+          {dataWeather && <WeatherCard data={dataWeather} />}
+          {dataWeather && <DailyWeather data={dataWeather} />}
+        </Main>
+        <Footer />
+      </div>
     </div>
   );
 }

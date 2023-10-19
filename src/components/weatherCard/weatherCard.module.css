@@ -2,22 +2,17 @@
   display: flex;
   position: relative;
   justify-content: space-between;
-  max-width: 500px;
-  min-height: 250px;
+  width: 500px;
+  height: auto;
   padding: 20px;
   margin: 50px auto;
+  background-color: #e2e2e2;
   border: 1px solid rgb(204, 204, 204);
   border-radius: 10px;
   box-shadow: 10px 10px 15px 10px rgba(10, 8, 91, 0.3);
-  background-color: #e2e2e2;
 
 }
-.day {
-  background-color: rgb(255, 255, 255);
-}
-.night {
-  background-color: rgb(0, 0, 0);
-}
+
 .textContainer {
   position: relative;
   padding: 15px;
