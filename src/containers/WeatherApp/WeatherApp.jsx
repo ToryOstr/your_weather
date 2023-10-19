@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 import WeatherCard from "../../components/WeatherCard/WeatherCard";
+import DailyWeather from "../DailyWeather/DailyWeather";
 import styles from "./weatherApp.module.css";
 import { API_KEY, WEATHER_API_URL } from "../../components/API";
 
@@ -28,6 +29,9 @@ export default function WeatherApp() {
       <Header onhandleGetSearchData={handleGetDataSrarch} />
       <Main>
         {dataWeather && <WeatherCard data={dataWeather} />}
+        {dataWeather && (
+          <DailyWeather data={dataWeather} />
+        )}
       </Main>
       <Footer />
     </div>
