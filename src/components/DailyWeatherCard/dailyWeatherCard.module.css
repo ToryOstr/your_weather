@@ -52,6 +52,7 @@ p {
   font-size: 16px;
 }
 .other {
+  position: relative;
   width: 90%;
   padding: 3px 0px 3px 5px;
 
@@ -63,10 +64,19 @@ p {
   font-size: calc(12px + 4 * ((100vw - 320px) / (1024 - 320)));
   font-weight: 700;
 }
+.windDir{
+  position: absolute;
+  top: 25%;
+  left: 70%;
+}
+.windDir>span {
+  display: none;
+}
 @media (max-width: 600px) {
   .imgContainer {
     height: 20%;
     top: 5px;
     right: 5px;
   }
+  
 }

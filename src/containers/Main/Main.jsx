@@ -1,11 +1,11 @@
 import styles from "./main.module.css";
-import { daysOfWeek } from "../../components/DailyWeatherCard/DailyWeatherCard";
+import { DaysOfWeek } from "../../components/DaysOfWeek";
 
 let currantDate = new Date();
 const dayOfWeek = currantDate.getDay();
 
 let formatDate = `${
-  daysOfWeek[dayOfWeek].full
+  DaysOfWeek[dayOfWeek].full
 } ${currantDate.toLocaleDateString()}`;
 
 export default function Main({ children }) {
