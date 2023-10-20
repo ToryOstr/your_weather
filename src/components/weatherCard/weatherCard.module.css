@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   justify-content: space-between;
-  width: 500px;
+      width:calc(250px + 250 * ((100vw - 320px) / (1024 - 320)));
   height: auto;
   padding: 20px;
   margin: 50px auto;
@@ -65,4 +65,18 @@
   justify-content: space-between;
   margin-top: 5px;
 
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+    margin: 25px auto;
+  }
+  
+  .textContainer{
+    padding: 5px;
+  }
+  .parametrs{
+    flex-direction: column;
+  }
 }

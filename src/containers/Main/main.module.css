@@ -4,3 +4,17 @@
   max-width: 100%;
   flex: 1 0 auto;
 }
+.currantDate {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(16, 16, 174);
+  background-color: #e2e2e2;
+  border-radius: 5px;
+  
+}

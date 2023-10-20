@@ -11,8 +11,8 @@ export default function DailyWeather(dataWeather) {
     <div className={styles.container}>
       <Swiper
         modules={[Navigation]}
-        spaceBetween={20}
-        navigation
+        spaceBetween={10}
+        navigation={false}
         slidesPerView={3}
       >
         {dataWeather &&

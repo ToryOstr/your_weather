@@ -1,24 +1,35 @@
 import styles from "./dailyWeatherCard.module.css";
 import { icons } from "../WeatherIcon/WeatherIcon";
 import arrow from "../WeatherIcon/weatherIcon/arrow.png";
+
+export const daysOfWeek = [
+  { short: "Su", full: "Sunday" },
+  { short: "Mo", full: "Monday" },
+  { short: "Tu", full: "Tuesday" },
+  { short: "We", full: "Wednesday" },
+  { short: "Th", full: "Thursday" },
+  { short: "Fr", full: "Friday" },
+  { short: "Sa", full: "Saturday" },
+];
+
 export default function DaillyWeatherCard(day) {
   console.log(day);
   if (day) {
     let date = new Date(day.data.dt * 1000);
     const dayOfWeek = date.getDay();
-    const daysOfWeek = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
-    let formatDate = `${daysOfWeek[dayOfWeek]} ${date.toLocaleDateString()}`;
+    let formatDate = `${daysOfWeek[dayOfWeek].full} ${date.toLocaleDateString()}`;
     return (
       <div className={styles.container}>
         <p className={styles.date}>{formatDate}</p>
         <div className={styles.dataContainer}>
           <div className={styles.other}>
+            <span>Temp:</span>
             <p>Min: {Math.round(day.data.temp.min)}°С</p>
             <p>Max: {Math.round(day.data.temp.max)}°С</p>
           </div>
           <div className={styles.other}>
-            <p>Wind:</p>
+            <span>Wind:</span>
             <p>{day.data.wind_speed}m/s</p>
           </div>
 
