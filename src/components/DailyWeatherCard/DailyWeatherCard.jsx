@@ -1,6 +1,6 @@
 import styles from "./dailyWeatherCard.module.css";
 import { icons } from "../WeatherIcon/WeatherIcon";
-import { windDirection } from "../WeatherCard/WeatherCard";
+import WindDirection from "../WindDirection/WindDirection";
 import { DaysOfWeek } from "../DaysOfWeek";
 
 export default function DaillyWeatherCard(day) {
@@ -27,7 +27,7 @@ export default function DaillyWeatherCard(day) {
               {day.data.wind_speed}m/s{" "}
             </p>
               <span className={styles.windDir}>
-                {windDirection(day.data.wind_deg)}
+                {WindDirection(day.data.wind_deg)}
               </span>
           </div>
 
