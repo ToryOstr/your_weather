@@ -1,6 +1,43 @@
 .container {
   display: flex;
+  position: relative;
   width: auto;
   height: auto;
-  margin-top: 30px;
+  margin: 30px;
+}
+.swiperButtonNext,
+.swiperButtonPrev {
+  display: block;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  top: 50%;
+  transition: 0.3s;
+}
+.swiperButtonNext {
+  left: 100%;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-left: 20px solid #144b85;
+  transform: translate(25%, -50%) scale(1);
+}
+.swiperButtonPrev {
+  right: 100%;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  transform: translate(-25%, -50%) scale(1);
+  border-right: 20px solid #144b85;
+}
+.swiperButtonNext:hover {
+  border-left: 20px solid rgba(16, 16, 160, 0.5);
+}
+.swiperButtonPrev:hover {
+  border-right: 20px solid rgba(16, 16, 160, 0.5);
+}
+@media (max-width: 600px) {
+
+  .swiperButtonNext,
+.swiperButtonPrev {
+  display: none;
+}
 }

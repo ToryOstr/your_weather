@@ -1,12 +1,12 @@
 .container {
   position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   width: auto;
   height: 95%;
   background-color: #e2e2e2;
-      border: 1px solid rgb(204, 204, 204);
-
+  border: 1px solid rgb(204, 204, 204);
   border-radius: 0px 25px;
   padding: 5px;
   justify-content: space-between;
@@ -53,23 +53,24 @@ p {
 }
 .other {
   position: relative;
+  z-index: 1;
   width: 90%;
   padding: 3px 0px 3px 5px;
-
 }
 .other > p {
   font-size: calc(12px + 4 * ((100vw - 320px) / (1024 - 320)));
 }
-.other>span {
-  font-size: calc(12px + 4 * ((100vw - 320px) / (1024 - 320)));
+.other > span {
+  display: block;
+  font-size: calc(12px + 6 * ((100vw - 320px) / (1024 - 320)));
   font-weight: 700;
 }
-.windDir{
+.windDir {
   position: absolute;
   top: 25%;
   left: 70%;
 }
-.windDir>span {
+.windDir > span {
   display: none;
 }
 @media (max-width: 600px) {
@@ -78,5 +79,4 @@ p {
     top: 5px;
     right: 5px;
   }
-  
 }
