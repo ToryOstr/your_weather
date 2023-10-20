@@ -41,8 +41,14 @@ export default function DailyWeather(dataWeather) {
             );
           })}
       </Swiper>
-      <div className={`${styles.swiperButtonPrev} swiperButtonPrev`} onClick={slideToPrev}></div>
-      <div className={`${styles.swiperButtonNext} swiperButtonNext`} onClick={slideToNext}></div>
+      <div
+        className={`${styles.swiperButtonPrev} swiperButtonPrev`}
+        onClick={slideToPrev}
+      ></div>
+      <div
+        className={`${styles.swiperButtonNext} swiperButtonNext`}
+        onClick={slideToNext}
+      ></div>
     </div>
   );
 }

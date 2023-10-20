@@ -1,11 +1,48 @@
 .container {
   display: flex;
+  gap: 10px;
+  align-items: center;
   width: 100%;
   height: auto;
-  justify-content: center;
-  align-items: center;
-}
-p {
-  line-height: 1.2;
+  padding: 10px;
+  box-sizing: border-box;
 
+}
+.inform {
+  line-height: 1.2;
+  font-weight: 700;
+}
+.linksContainer{
+  display: flex;
+  column-gap: 10px;
+
+}
+.companyLink {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  padding: 0px 3px;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgb(16, 16, 160);
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+.imgContainer {
+  margin-right: 3px;
+  width: 20px;
+  height: 20px;
+}
+.companyLogo{
+  max-width: 100%;
+  object-fit: contain;
+}
+.openWeatherLink{
+  display: block;
+
+  width: 60px;
+  height: auto;
+  padding: 3px;
+  box-sizing: border-box;
 }
