@@ -17,18 +17,23 @@
   column-gap: 10px;
 
 }
+
 .companyLink {
   display: flex;
   align-items: center;
   width: 60px;
   height: 30px;
   padding: 0px 3px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 700;
   color: rgb(16, 16, 160);
   background-color: #ffffff;
   border-radius: 3px;
 }
+.companyLink:nth-child(1){
+  width: 70px
+}
+
 .imgContainer {
   margin-right: 3px;
   width: 20px;

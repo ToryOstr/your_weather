@@ -5,9 +5,8 @@ export default function Footer() {
     <div className={styles.container}>
       <p className={styles.inform}>Create with:</p>
       <div className={styles.linksContainer}>
-        <a
+        <a className={styles.companyLink}
           target="_blank" rel="noopener noreferrer" href="https://rapidapi.com/wirefreethought/api/geodb-cities"
-          className={styles.companyLink}
         >
           <div className={styles.imgContainer}>
             <img
@@ -18,7 +17,7 @@ export default function Footer() {
           </div>
           <span>GeoDB</span>
         </a>
-        <a target="_blank" rel="noopener noreferrer" href="https://openweathermap.org" className={styles.companyLink}>
+        <a className={styles.companyLink} target="_blank" rel="noopener noreferrer" href="https://openweathermap.org">
           <div className={`${styles.openWeatherLink}`}>
             <img
               className={styles.companyLogo}
