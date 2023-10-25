@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
+import StartAnimation from "../../components/StartAnimation/StartAnimation";
 import Footer from "../Footer/Footer";
 import WeatherCard from "../../components/WeatherCard/WeatherCard";
 import DailyWeather from "../DailyWeather/DailyWeather";
@@ -29,7 +30,7 @@ export default function WeatherApp() {
       <div className={styles.wrap}>
         <Header onhandleGetSearchData={handleGetDataSrarch} />
         <Main>
-          {dataWeather && <WeatherCard data={dataWeather} />}
+          {dataWeather? <WeatherCard data={dataWeather}/> : <StartAnimation/>}
           {dataWeather && <DailyWeather data={dataWeather} />}
         </Main>
         <Footer />

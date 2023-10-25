@@ -1,0 +1,10 @@
+.animationContainer {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+.animationImg {
+  max-width: 100%;
+  object-fit: cover;
+}
