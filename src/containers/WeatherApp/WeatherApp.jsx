@@ -15,14 +15,15 @@ export default function WeatherApp() {
     const [lat, lon] = searchData.value.split(" ");
     const weatherFetch = fetch(
       `${WEATHER_API_URL}onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${API_KEY}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setDataWeather({ city: searchData.label, ...data });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    );
+      weatherFetch
+        .then((response) => response.json())
+        .then((data) => {
+          setDataWeather({ city: searchData.label, ...data });
+        })
+        .catch((error) => {
+          console.log(error);
+        });
   }
 
   return (

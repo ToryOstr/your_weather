@@ -17,20 +17,18 @@ export default function StartAnimation() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) =>
-        prevIndex === images.length - 1
-          ? 0
-          : getRandomInt(images.length)
+        prevIndex === images.length - 1 ? 0 : getRandomInt(images.length)
       );
     }, 500);
 
     return () => {
       clearInterval(interval);
     };
-  }, []);
+  }, [images.length]);
 
   return (
     <div className={styles.animationContainer}>
-      <img className={styles.animationImg} src={images[currentImageIndex]} alt="weather image" />
+      <img className={styles.animationImg} src={images[currentImageIndex]} alt="weather" />
     </div>
   );
 }

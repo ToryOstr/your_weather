@@ -21,6 +21,7 @@ export default function DailyWeather(dataWeather) {
       swiperRef.current.slidePrev();
     }
   };
+
   return (
     <div className={styles.container}>
       <Swiper
