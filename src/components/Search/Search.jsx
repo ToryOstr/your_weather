@@ -1,14 +1,22 @@
 import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
-import { GEO_API_URL, geoApiOptions } from "../API";
 import styles from "./search.module.css";
 
 export default function Search({ onSearchChange }) {
   const [search, setSerch] = useState(null);
+  const GEO_API_URL = fetch(
+    "https://api.netlify.com/api/v1 /accounts/0RxMZlFHeX8lD6ZbpidTrpefGuI8pTQHCIOcqcqtpsU/env/GEO_API_URL"
+  ).then((response) => response.json());
+
+  const geoApiOptions = fetch(
+    "https://api.netlify.com/api/v1 /accounts/0RxMZlFHeX8lD6ZbpidTrpefGuI8pTQHCIOcqcqtpsU/env/geoApiOptions"
+  ).then((response) => response.json());
 
   async function loadOptions(inputValue) {
     return fetch(
-      `${GEO_API_URL}/cities?minPopulation=1000&namePrefix=${inputValue}`,
+      `${JSON.stringify(
+        GEO_API_URL
+      )}/cities?minPopulation=1000&namePrefix=${inputValue}`,
       geoApiOptions
     )
       .then((response) => response.json())
