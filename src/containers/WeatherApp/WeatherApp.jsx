@@ -10,19 +10,13 @@ import styles from "./weatherApp.module.css";
 export default function WeatherApp() {
   const [dataWeather, setDataWeather] = useState(null);
 
-  
+  const weather_API_URL = "https://api.openweathermap.org/data/3.0/";
   const API_KEY = process.env.API_KEY;
-
-  const WEATHER_API_URL = process.env.WEATHER_API_URL;
   
   function handleGetDataSrarch(searchData) {
     const [lat, lon] = searchData.value.split(" ");
     const weatherFetch = fetch(
-      `${JSON.stringify(
-        WEATHER_API_URL
-      )}onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${JSON.stringify(
-        API_KEY
-      )}`
+      `${weather_API_URL}onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${API_KEY}`
     );
       weatherFetch
         .then((response) => response.json())

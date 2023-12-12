@@ -1,17 +1,24 @@
 import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import styles from "./search.module.css";
+import { progress } from "framer-motion";
 
 export default function Search({ onSearchChange }) {
   const [search, setSerch] = useState(null);
-  const GEO_API_URL = process.env.GEO_API_URL;
-  const geoApiOptions = process.env.geoApiOptions;
+  
+  const geo_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
+  const RapidAPI_Key = process.env.RapidAPI_Key;
 
+  const geoApiOptions = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": RapidAPI_Key,
+      "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
+    },
+  };
   async function loadOptions(inputValue) {
     return fetch(
-      `${JSON.stringify(
-        GEO_API_URL
-      )}/cities?minPopulation=1000&namePrefix=${inputValue}`,
+      `${geo_API_URL}/cities?minPopulation=1000&namePrefix=${inputValue}`,
       geoApiOptions
     )
       .then((response) => response.json())
