@@ -8,7 +8,7 @@ export default function Search({ onSearchChange }) {
   const geoApiOptions = process.env.geoApiOptions;
 
   async function loadOptions(inputValue) {
-    return fetch(
+    return (fetch(
       `${JSON.stringify(
         GEO_API_URL
       )}/cities?minPopulation=1000&namePrefix=${inputValue}`,
@@ -25,7 +25,7 @@ export default function Search({ onSearchChange }) {
           }),
         };
       })
-      .catch((error) => console.error(error));
+      .catch((error) => console.error(error)));
   }
 
   function handleOnChange(searchData) {
