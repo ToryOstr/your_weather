@@ -22,14 +22,14 @@ export default function Search({ onSearchChange }) {
     )
       .then((response) => response.json())
       .then((response) => {
-        return {
+        return ({
           options: response.data.map((city) => {
             return {
               value: `${city.latitude} ${city.longitude}`,
               label: `${city.name}, ${city.countryCode}`,
             };
           }),
-        };
+        });
       })
       .catch((error) => console.error(error));
   }
