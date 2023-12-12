@@ -6,18 +6,15 @@ import Footer from "../Footer/Footer";
 import WeatherCard from "../../components/WeatherCard/WeatherCard";
 import DailyWeather from "../DailyWeather/DailyWeather";
 import styles from "./weatherApp.module.css";
-// import { API_KEY, WEATHER_API_URL } from "../../components/API";
 
 export default function WeatherApp() {
   const [dataWeather, setDataWeather] = useState(null);
 
-  const API_KEY = fetch(
-    "https://api.netlify.com/api/v1 /accounts/0RxMZlFHeX8lD6ZbpidTrpefGuI8pTQHCIOcqcqtpsU/env/API_KEY"
-  ).then((response) => response.json());
+  
+  const API_KEY = process.env.API_KEY;
 
-  const WEATHER_API_URL = fetch(
-    "https://api.netlify.com/api/v1 /accounts/0RxMZlFHeX8lD6ZbpidTrpefGuI8pTQHCIOcqcqtpsU/env/WEATHER_API_URL"
-  ).then((response) => response.json());
+  const WEATHER_API_URL = process.env.WEATHER_API_URL;
+  
   function handleGetDataSrarch(searchData) {
     const [lat, lon] = searchData.value.split(" ");
     const weatherFetch = fetch(

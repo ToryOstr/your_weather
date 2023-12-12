@@ -4,13 +4,8 @@ import styles from "./search.module.css";
 
 export default function Search({ onSearchChange }) {
   const [search, setSerch] = useState(null);
-  const GEO_API_URL = fetch(
-    "https://api.netlify.com/api/v1 /accounts/0RxMZlFHeX8lD6ZbpidTrpefGuI8pTQHCIOcqcqtpsU/env/GEO_API_URL"
-  ).then((response) => response.json());
-
-  const geoApiOptions = fetch(
-    "https://api.netlify.com/api/v1 /accounts/0RxMZlFHeX8lD6ZbpidTrpefGuI8pTQHCIOcqcqtpsU/env/geoApiOptions"
-  ).then((response) => response.json());
+  const GEO_API_URL = process.env.GEO_API_URL;
+  const geoApiOptions = process.env.geoApiOptions;
 
   async function loadOptions(inputValue) {
     return fetch(
