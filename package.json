@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "react-scripts": "5.0.1",
-    "@babel/plugin-proposal-private-property-in-object" : "7.23.2"
+    "babel-preset-react-app": "7.23.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -19,7 +19,7 @@ export default function StartAnimation() {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : getRandomInt(images.length)
       );
-    }, 150);
+    }, 500);
 
     return () => {
       clearInterval(interval);
