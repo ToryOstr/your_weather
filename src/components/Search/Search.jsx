@@ -3,7 +3,7 @@ import { AsyncPaginate } from "react-select-async-paginate";
 import styles from "./search.module.css";
 
 export default function Search({ onSearchChange }) {
-  const [search, setSerch] = useState(null);
+  const [search, setSerch] = useState('Kyiv');
 
   const geo_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
   const RapidAPI_Key = process.env.RapidAPI_Key;
