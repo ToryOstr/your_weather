@@ -11,7 +11,7 @@ export default function WeatherApp() {
   const [dataWeather, setDataWeather] = useState(null);
 
   const weather_API_URL = "https://api.openweathermap.org/data/3.0/";
-  const API_KEY = process.env.API_KEY;
+  const API_KEY = process.env.REACT_APP_API_KEY;
   
   function handleGetDataSrarch(searchData) {
     const [lat, lon] = searchData.value.split(" ");
