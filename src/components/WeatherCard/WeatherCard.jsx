@@ -4,8 +4,6 @@ import styles from "./weatherCard.module.css";
 import { icons } from "../WeatherIcon/WeatherIcon";
 
 export default function WeatherCard(dataWeather) {
-  console.log(dataWeather);
-
   return (
     <div className={styles.container}>
       <div className={styles.textContainer}>

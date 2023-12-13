@@ -4,7 +4,6 @@ import WindDirection from "../WindDirection/WindDirection";
 import { DaysOfWeek } from "../DaysOfWeek";
 
 export default function DaillyWeatherCard(day) {
-  console.log(day);
   if (day) {
     let date = new Date(day.data.dt * 1000);
     const dayOfWeek = date.getDay();

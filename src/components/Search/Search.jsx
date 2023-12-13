@@ -1,17 +1,24 @@
 import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import styles from "./search.module.css";
+import { RapidAPI_KEY } from "../API";
 
 export default function Search({ onSearchChange }) {
   const [search, setSerch] = useState(null);
-  const GEO_API_URL = process.env.GEO_API_URL;
-  const geoApiOptions = process.env.geoApiOptions;
+
+  const geoApiOptions = {
+    method: "GET",
+    headers: {
+      "X-RapidAPI-Key": RapidAPI_KEY,
+      "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
+    },
+  };
+
+  const GEO_API_URL = "https://wft-geo-db.p.rapidapi.com/v1/geo";
 
   async function loadOptions(inputValue) {
-    return (fetch(
-      `${JSON.stringify(
-        GEO_API_URL
-      )}/cities?minPopulation=1000&namePrefix=${inputValue}`,
+    return fetch(
+      `${GEO_API_URL}/cities?minPopulation=1000&namePrefix=${inputValue}`,
       geoApiOptions
     )
       .then((response) => response.json())
@@ -25,7 +32,7 @@ export default function Search({ onSearchChange }) {
           }),
         };
       })
-      .catch((error) => console.error(error)));
+      .catch((error) => console.error(error));
   }
 
   function handleOnChange(searchData) {
