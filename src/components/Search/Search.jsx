@@ -42,7 +42,7 @@ export default function Search({ onSearchChange }) {
       <AsyncPaginate
         className={styles.customSelect}
         placeholder="Search for city"
-        debounceTimeout={2000}
+        debounceTimeout={1000}
         value={search}
         onChange={handleOnChange}
         loadOptions={loadOptions}
