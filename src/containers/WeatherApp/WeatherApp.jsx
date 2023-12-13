@@ -21,7 +21,7 @@ export default function WeatherApp() {
       weatherFetch
         .then((response) => response.json())
         .then((data) => {
-          setDataWeather({ city: searchData.label, ...data });
+          setDataWeather({ city: searchData[0].label, ...data });
         })
         .catch((error) => {
           console.log(error);
