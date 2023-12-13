@@ -15,7 +15,7 @@ export default function Search({ onSearchChange }) {
       "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
     },
   };
-  async function loadOptions(inputValue = 'kyiv') {
+  async function loadOptions(inputValue) {
     return fetch(
       `${geo_API_URL}/cities?minPopulation=1000&namePrefix=${inputValue}`,
       geoApiOptions
