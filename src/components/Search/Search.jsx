@@ -23,12 +23,10 @@ export default function Search({ onSearchChange }) {
       .then((response) => response.json())
       .then((response) => {
         return ({
-          options: response.data.map((city) => {
-            return {
+          options: response.data.map((city) => ({
               value: `${city.latitude} ${city.longitude}`,
               label: `${city.name}, ${city.countryCode}`,
-            };
-          }),
+          })),
         });
       })
       .catch((error) => console.error(error));
