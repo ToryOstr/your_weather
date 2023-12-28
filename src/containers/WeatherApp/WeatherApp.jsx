@@ -14,7 +14,7 @@ export default function WeatherApp() {
   const WEATHER_API_URL = "https://api.openweathermap.org/data/3.0/";
 
   function handleGetDataSrarch(searchData) {
-    const [lat, lon] = searchData.value.split(" ");
+    let [lat, lon] = searchData.value.split(" ");
     const weatherFetch = fetch(
       `${WEATHER_API_URL}onecall?lat=${lat}&lon=${lon}&units=metric&exclude=minutely&appid=${API_KEY}`
     );
